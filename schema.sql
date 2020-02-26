@@ -48,4 +48,8 @@ create table dept_emp (
 	foreign key (dept_no) references departments (dept_no),
 	primary key (emp_no, dept_no)
 );
+select * from employees;
+select * from salaries;
+select * from titles;
+select * from dept_emp;
 select * from departments;
