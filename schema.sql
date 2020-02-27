@@ -5,6 +5,15 @@ CREATE TABLE departments (
 	PRIMARY KEY (dept_no),
 	UNIQUE (dept_name)
 );
+create table dept_emp (
+	emp_no int not null,
+	dept_no varchar not null,
+	from_date date not null,
+	to_date date not null,
+	foreign key (emp_no) references employees (emp_no),
+	foreign key (dept_no) references departments (dept_no),
+	primary key (emp_no, dept_no)
+);
 create table employees (
 	emp_no int not null,
 	birth_date date not null,
@@ -37,19 +46,12 @@ create table titles (
 	from_date date not null,
 	to_date date not null,
 	foreign key (emp_no) references employees (emp_no),
-	primary key (emp_no)
+	primary key (emp_no, from_date)
 );
-create table dept_emp (
-	dept_no varchar not null,
-	emp_no int not null,
-	from_date date not null,
-	to_date date not null,
-	foreign key (emp_no) references employees (emp_no),
-	foreign key (dept_no) references departments (dept_no),
-	primary key (emp_no, dept_no)
-);
+
+select * from departments;
+select * from dept_emp;
 select * from employees;
+select * from managers;
 select * from salaries;
 select * from titles;
-select * from dept_emp;
-select * from departments;
