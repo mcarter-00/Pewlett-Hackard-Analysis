@@ -85,8 +85,9 @@ select * from tbl_count_unique_titles_retiring;
 -- TABLE 3: Who's Ready for a Mentor?
 select
 	e.emp_no,
-	e.first_name,
 	e.last_name,
+	e.first_name,
+	e.birth_date,
 	string_agg(ttl.title, '/') as titles,
 	de.from_date,
 	de.to_date
@@ -103,7 +104,8 @@ group by
 	e.first_name,
 	e.last_name,
 	de.from_date,
-	de.to_date;
-	
-select count(*) from tbl_mentor_ready;
+	de.to_date
+order by last_name;
+
 select * from tbl_mentor_ready;
+select count(*) from tbl_mentor_ready;
