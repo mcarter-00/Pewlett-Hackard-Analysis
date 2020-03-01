@@ -23,26 +23,26 @@ select first_name, last_name
 from employees
 where birth_date between '1955-01-01' and '1955-12-31';
 
--- Narrow the Search for Retiremente Eligibility
+-- Narrow the Search for Retirement Eligibility
 select first_name, last_name
 from employees
-where (birth_date between '1955-01-01' and '1955-12-31') 
+where (birth_date between '1952-01-01' and '1955-12-31') 
 and (hire_date between '1985-01-01' and '1988-12-31');
 
--- Number of employees retiring
+-- Determine the number of employees retiring
 select count(first_name)
 from employees
 where (birth_date between '1952-01-01' and '1955-12-31')
 and (hire_date between '1985-01-01' and '1988-12-31');
 
 -- Save data into a new table "retirement info"
-select first_name, last_name
-into retirement_info
-from employees
-where (birth_date between '1952-01-01' and '1955-12-31')
-and (hire_date between '1985-01-01' and '1988-12-31');
-
-select * from retirement_info;
+-- select first_name, last_name
+-- into retirement_info
+-- from employees
+-- where (birth_date between '1952-01-01' and '1955-12-31')
+-- and (hire_date between '1985-01-01' and '1988-12-31');
+-- Check the table
+-- select * from retirement_info;
 
 -- Create a new table for retiring employees
 select emp_no, first_name, last_name
@@ -53,7 +53,7 @@ and (hire_date between '1985-01-01' and '1988-12-31');
 -- Check the table
 select * from retirement_info;
 
--- Joining retirement_info and dept_emp tables
+-- Join the "retirement_info" and "dept_emp" tables
 select retirement_info.emp_no,
 	retirement_info.first_name,
 	retirement_info.last_name,
@@ -62,17 +62,17 @@ from retirement_info
 left join dept_emp
 on retirement_info.emp_no = dept_emp.emp_no;
 
--- Using aliases in the code above: joining retirement_info and dept_emp tables
+-- Use aliases in the code above^ to make code cleaner
 select ri.emp_no,
 	ri.first_name,
 	ri.last_name,
 	de.to_date
-from retirement_info as ri --this is where 'ri' gets defined
-left join dept_emp as de --this is where 'de' gets defined
+from retirement_info as ri --this is where the alias 'ri' gets defined
+left join dept_emp as de --this is where the alias 'de' gets defined
 on ri.emp_no = de.emp_no;
 -- NOTE: these aliases only exist within this query; they aren't committed to that database
 
--- Joining departments and managers tables
+-- Join the "departments" and "managers" tables
 select dpt.dept_name,
 	mgr.emp_no,
 	mgr.from_date,
@@ -81,7 +81,7 @@ from departments as dpt
 inner join managers as mgr
 on dpt.dept_no = mgr.dept_no;
 
--- Joining retirement_info and dept_emp tables to make sure they're still employed
+-- Join the "retirement_info" and "dept_emp" tables to make sure they're still employed
 select ri.emp_no,
 	ri.first_name,
 	ri.last_name,
@@ -91,10 +91,10 @@ from retirement_info as ri
 left join dept_emp as de
 on ri.emp_no = de.emp_no
 where de.to_date = ('9999-01-01');
-
+-- Check the table
 select * from current_emp;
 
--- Employee count by department number
+-- Determine the employee count by department number
 select count(ce.emp_no), de.dept_no
 into emp_count_by_dept_no
 from current_emp as ce
@@ -103,9 +103,9 @@ on ce.emp_no = de.emp_no
 group by de.dept_no
 order by de.dept_no;
 
-
--- Creating 1st List: Employee Information
--- using a modified version "retirement_info" table to include salaries and renaming to "emp_info"
+-- Create the 1st List: Employee Information
+-- Here, we are using a modified version of the "retirement_info" table to include salaries 
+-- and renaming the table to "emp_info"
 select e.emp_no, 
 	e.first_name, 
 	e.last_name,
@@ -114,15 +114,15 @@ select e.emp_no,
 	de.to_date
 into emp_info
 from employees as e
-inner join salaries as s
-on (e.emp_no = s.emp_no)
-inner join dept_emp as de
-on (e.emp_no = de.emp_no)
+	inner join salaries as s
+		on (e.emp_no = s.emp_no)
+	inner join dept_emp as de
+		on (e.emp_no = de.emp_no)
 where (e.birth_date between '1952-01-01' and '1955-12-31')
 	and (e.hire_date between '1985-01-01' and '1988-12-31')
 	and (de.to_date = '9999-01-01');
 
--- Creating 2nd List: Management
+-- Create the 2nd List: Management
 select mgr.dept_no,
 	dpt.dept_name,
 	mgr.emp_no,
@@ -137,7 +137,7 @@ from managers as mgr
 	inner join current_emp as ce
 		on (mgr.emp_no = ce.emp_no);
 		
--- Creating 3rd List: Department Retirees
+-- Create the 3rd List: Department Retirees
 select ce.emp_no,
 	ce.first_name,
 	ce.last_name,
@@ -149,7 +149,7 @@ from current_emp as ce
 	inner join departments as dpt
 		on (de.dept_no = dpt.dept_no);
         
--- Skill Drill 7.3.6: Create a query that returns only the info relevant to the Sales Team
+-- Skill Drill 7.3.6: Create a query that returns the info relevant to the Sales Team
 -- Requested list includes: employee numbers, first name, last name, department name
 select ce.emp_no,
 	ce.first_name,
@@ -163,7 +163,7 @@ from current_emp as ce
 		on (de.dept_no = dpt.dept_no)
 where dept_name = 'Sales';
 
--- Skill Drill 7.3.6: Create a query that returns only the following info for the Sales & Development Teams
+-- Skill Drill 7.3.6: Create a query that returns the following info for the Sales & Development Teams
 -- Requested list includes: employee numbers, first name, last, department name
 select ce.emp_no,
 	ce.first_name,
