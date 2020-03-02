@@ -25,14 +25,3 @@ In light of upcoming retirements, HR is considering a mentorship program and wan
 ## Code and Outputs
 * Refer to "Challenge" folder for .sql file for queries
 * Refer to "Challenge > Data" folder for .csv files for examples of each output.
-
-
-
-Create a technical report in markdown format that contains the following:
-* Brief project summary
-* PNG of your ERD
-* Code for the requested queries, with examples of each output
-
-When writing your project summary, use your own words to describe the purpose of the queries used (for example, determining how many employees are retiring) and what you observed through your results.
-
-And then the report asks you to summarize (not write queries for) the counts of employees retiring, how many will be hired, and how many are eligible for the mentorship program
