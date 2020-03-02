@@ -20,6 +20,8 @@ In light of these upcoming retirements, HR is also considering a mentorship prog
 
 
 ## ERD schema
+The image below is the ERD schema that was used to build queries for this challenge.
+
 ![ERD schema](EmployeeDB_revised.png)
 
 ## Code and Outputs
