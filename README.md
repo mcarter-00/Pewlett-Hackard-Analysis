@@ -12,11 +12,11 @@ All of these current retire-eligible employees have held different positions at 
 
 ![No. of Titles Retiring](Challenge/Titles_Retiring.png)
 
-A good number of employees have been with Pewlett Hackard for a very long time because they worked their way up, and received promotions. Given their promotional ladders, it was important to narrow down the table above to better determine an employee's most recent position prior to retirement. As demonstrated in the table below, there will be over 13,5000 senior engineers and 12,700 senior staff leaving the company to retire. These employeees can be found here: Challenge/Data/tbl_unique_titles_retiring.csv.
+A good number of employees have been with Pewlett Hackard for a very long time because they worked their way up, and received promotions. Given their promotional ladders, it was important to narrow down the table above to better determine an employee's most recent position prior to retirement. As demonstrated in the table below, there will be over 13,500 senior engineers and a little over 12,700 senior staff leaving the company to retire. These employeees can be found here: Challenge/Data/tbl_unique_titles_retiring.csv.
 
 ![No. of Most Recent Titles Retiring](Challenge/Unique_Titles_Retiring.png)
 
-In light of upcoming retirements, HR is considering a mentorship program and wanted to get a better idea of which employees would be good candidates for mentoring. A quick query helped inform HR that there are 1,549 employees who are eligible to be mentors according to their criteria. The table provides a list of these employees and shows how long they have between with Pewlett Hackard as well as their positions in the company. It can be accessed here: Challenger/Data/tbl_mentor_ready.csv.
+In light of these upcoming retirements, HR is also considering a mentorship program and wanted to get a better idea of which employees would be good candidates for mentoring. A quick query helped inform HR that there are 1,549 employees who are eligible to be mentors according to their criteria. The table provides a list of these employees and shows how long they have between with Pewlett Hackard as well as their positions in the company. It can be accessed here: Challenger/Data/tbl_mentor_ready.csv.
 
 
 ## ERD schema
