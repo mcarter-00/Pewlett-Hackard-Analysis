@@ -3,9 +3,7 @@ Create entity relationship diagrams, perform data modeling, and complete analysi
 
 ---
 
-# Challenge
-
-## Project Summary
+# Project Summary
 The Humans Resources (HR) Department at Pewlett Hackard is preparing for several employee retirements, but they were unsure how many or which departments they work. A quick query helped inform HR that they have 33,118 current employees who are eligible for retirement. These current retire-eligible employees can be found here: Challenge/Data/tbl_current_emp.csv. 
 
 All of these current retire-eligible employees have held different positions at Pewlett Hackard. According to the table below, nearly 14,000 and roughly 13,000 had senior engineer and engineer positions, respectively. Following this group, almost 13,000 and 12,000 had senior staff and staff positions, respectively. It was interesting to see that there were only a handful of manager positions. This could be a good opportunity for HR to investigate why there were so few managers.
